@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salas | TeatroApp</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #181824 0%, #232326 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-content {
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+      background: #232346;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(162,89,255,0.10);
+      padding: 32px 24px;
+    }
+    h1 {
+      color: #a259ff;
+      margin-bottom: 18px;
+      font-size: 2em;
+      font-weight: 700;
+    }
+    .sala-list {
+      margin-bottom: 32px;
+    }
+    .sala-item {
+      background: #181824;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      padding: 18px 18px 12px 18px;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .sala-item h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.2em;
+      color: #fff;
+    }
+    .sala-item .info {
+      font-size: 1em;
+      margin-bottom: 8px;
+    }
+    .sala-item .acciones button {
+      margin-right: 8px;
+    }
+    .btn {
+      background: #a259ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #7a1fff;
+    }
+    .form-section {
+      background: #232346;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-top: 24px;
+      max-width: 420px;
+      box-shadow: 0 4px 18px rgba(162,89,255,0.10);
+    }
+    .form-section h3 {
+      color: #a259ff;
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+    .form-section label {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .form-section input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      border: none;
+      border-radius: 6px;
+      background: #181824;
+      color: #fff;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <h1>Salas</h1>
+    <div class="sala-list" id="sala-list"></div>
+    <section class="form-section">
+      <h3 id="form-title">Agregar Nueva Sala</h3>
+      <form id="form-sala">
+        <input type="hidden" id="salaId">
+        <label for="nombre">Nombre de la sala</label>
+        <input type="text" id="nombre" required>
+        <label for="capacidad">Capacidad máxima</label>
+        <input type="number" id="capacidad" min="1" required>
+        <button type="submit" class="btn" id="btn-guardar">Agregar Sala</button>
+        <button type="button" class="btn" id="btn-cancelar" style="display:none;background:#555;">Cancelar</button>
+      </form>
+    </section>
+  </div>
+  <script src="../model/salaModel.js"></script>
+  <script src="../controller/salaController.js"></script>
+</body>
+</html>
