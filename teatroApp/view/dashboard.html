@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Control | TeatroApp</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #f7f9fa;
+      color: #222;
+      display: flex;
+    }
+    .sidebar {
+      width: 270px;
+      background: #15395b;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 12px rgba(0,0,0,0.07);
+    }
+    .sidebar-header {
+      padding: 32px 0 16px 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      border-bottom: 1px solid #1e4d7b;
+    }
+    .sidebar-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 24px 0 16px 0;
+    }
+    .sidebar-profile .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2em;
+      color: #a259ff;
+    }
+    .sidebar-profile .user {
+      font-weight: 700;
+      font-size: 1.1em;
+      margin-bottom: 2px;
+    }
+    .sidebar-profile .rol {
+      font-size: 0.98em;
+      color: #a0b3c6;
+    }
+    .sidebar nav {
+      flex: 1;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .sidebar nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 32px;
+      font-size: 1.08em;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      margin-bottom: 2px;
+    }
+    .sidebar nav a.active,
+    .sidebar nav a:hover {
+      background: #1e4d7b;
+      color: #a259ff;
+      border-left: 4px solid #a259ff;
+    }
+    .main-content {
+      flex: 1;
+      background: #f7f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar {
+      background: #15395b;
+      color: #fff;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      min-height: 56px;
+    }
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin: 36px 32px 0 32px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(21,57,91,0.07);
+      padding: 28px 22px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 110px;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      border-left: 8px solid #a259ff;
+    }
+    .card.card-blue { border-left-color: #1cb0f6; }
+    .card.card-green { border-left-color: #2ecc71; }
+    .card.card-red { border-left-color: #e74c3c; }
+    .card.card-orange { border-left-color: #f6b93b; }
+    .card.card-cyan { border-left-color: #48dbfb; }
+    .card.card-darkgreen { border-left-color: #10ac84; }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(162,89,255,0.13);
+      transform: translateY(-4px) scale(1.03);
+    }
+    .card-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-value {
+      font-size: 2.1em;
+      font-weight: 700;
+      color: #a259ff;
+      margin-bottom: 6px;
+    }
+    .card-icon {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 2em;
+      opacity: 0.18;
+    }
+    .breadcrumb {
+      font-size: 0.98em;
+      color: #a0b3c6;
+      margin: 18px 32px 0 32px;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">TeatroApp</div>
+    <div class="sidebar-profile">
+      <div class="avatar">👤</div>
+      <div class="user">admin</div>
+      <div class="rol">Administrador</div>
+    </div>
+    <nav>
+      <a href="#" class="active">Dashboard</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="usuariosView.html">Usuarios</a>
+      <a href="salaView.html">Salas</a>
+      <a href="#">Obras</a>
+      <a href="#">Reportes</a>
+      <a href="#">Configuración</a>
+      <a href="login.html">Cerrar sesión</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <div class="topbar">
+      Panel de Control
+      <span style="font-size:0.9em;font-weight:400;letter-spacing:0.5px;">admin</span>
+    </div>
+    <div class="breadcrumb">
+      <span>Home</span> &nbsp;/&nbsp; <span style="color:#222;">Dashboard</span>
+    </div>
+    <div class="dashboard-cards">
+      <div class="card card-blue" onclick="location.href='usuariosView.html'">
+        <div class="card-title">Usuarios <span style="font-size:1.2em;">👥</span></div>
+        <div class="card-value" id="usuarios-count">0</div>
+        <div class="card-icon">👥</div>
+      </div>
+      <div class="card card-green" onclick="location.href='salaView.html'">
+        <div class="card-title">Salas <span style="font-size:1.2em;">🎭</span></div>
+        <div class="card-value" id="salas-count">0</div>
+        <div class="card-icon">🎭</div>
+      </div>
+      <div class="card card-red">
+        <div class="card-title">Tickets vendidos <span style="font-size:1.2em;">🎫</span></div>
+        <div class="card-value" id="tickets-count">0</div>
+        <div class="card-icon">🎫</div>
+      </div>
+      <div class="card card-orange">
+        <div class="card-title">Obras activas <span style="font-size:1.2em;">🎬</span></div>
+        <div class="card-value" id="obras-count">0</div>
+        <div class="card-icon">🎬</div>
+      </div>
+      <div class="card card-cyan">
+        <div class="card-title">Reservas <span style="font-size:1.2em;">📅</span></div>
+        <div class="card-value" id="reservas-count">0</div>
+        <div class="card-icon">📅</div>
+      </div>
+      <div class="card card-darkgreen">
+        <div class="card-title">Solicitudes <span style="font-size:1.2em;">📩</span></div>
+        <div class="card-value" id="solicitudes-count">0</div>
+        <div class="card-icon">📩</div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Simulación de datos para los contadores
+    document.getElementById('usuarios-count').textContent = window.usuarioModel ? window.usuarioModel.getUsuarios().length : 2;
+    document.getElementById('salas-count').textContent = window.salaModel ? window.salaModel.getSalas().length : 2;
+    document.getElementById('tickets-count').textContent = 35; // Simulado
+    document.getElementById('obras-count').textContent = 4; // Simulado
+    document.getElementById('reservas-count').textContent = 12; // Simulado
+    document.getElementById('solicitudes-count').textContent = 3; // Simulado
+  </script>
+  <script src="../model/usuarioModel.js"></script>
+  <script src="../model/salaModel.js"></script>
+</body>
+</html>
